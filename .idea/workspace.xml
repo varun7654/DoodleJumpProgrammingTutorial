@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4163aaa-8362-4ec8-ba02-d72c89f5be2f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/input/InputEventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/input/InputEventThrower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsTickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsTickable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/BreakingPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/BreakingPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/MovingPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/MovingPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="x05xz02c" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29aTbIo4E6uQbk1fNlrwuLjrpMf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.dacubeking.doodlejump" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\varun\Documents\GitHub\DoodleJump\core\src\com\dacubeking\doodlejump\input" />
+      <recent name="C:\Users\varun\Documents\GitHub\DoodleJump\core\src\com\dacubeking\doodlejump" />
+      <recent name="C:\Users\varun\Documents\GitHub\DoodleJump\assets\textures" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dacubeking.doodlejump.platforms" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dacubeking.doodlejump.DesktopLauncher" />
+      <module name="DoodleJump.desktop.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dacubeking.doodlejump.physics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DesktopLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4163aaa-8362-4ec8-ba02-d72c89f5be2f" name="Changes" comment="" />
+      <created>1653350270555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653350270555</updated>
+      <workItem from="1653350274983" duration="1523000" />
+      <workItem from="1653351986234" duration="3501000" />
+      <workItem from="1654137852814" duration="2321000" />
+      <workItem from="1654204537327" duration="13000" />
+      <workItem from="1655526244418" duration="14000" />
+      <workItem from="1655577356815" duration="11695000" />
+      <workItem from="1655599333852" duration="2161000" />
+      <workItem from="1655702510289" duration="24000" />
+      <workItem from="1655843129093" duration="9068000" />
+      <workItem from="1656012600710" duration="5000" />
+      <workItem from="1657501878413" duration="1413000" />
+      <workItem from="1657505846166" duration="4171000" />
+      <workItem from="1658730995446" duration="1940000" />
+      <workItem from="1661827296219" duration="3737000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
