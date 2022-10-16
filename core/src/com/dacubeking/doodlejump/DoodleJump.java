@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
+import com.dacubeking.doodlejump.platforms.NormalPlatform;
 import com.dacubeking.doodlejump.platforms.Platform;
 import com.dacubeking.doodlejump.player.Player;
 
@@ -33,6 +35,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
     }
 
     private Player player;
+    private Platform platform;
 
     Texture background;
     public float backgroundHeight;
@@ -76,7 +79,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         backgroundWidth = camera.viewportWidth;
         backgroundHeight = (camera.viewportWidth / background.getWidth()) * background.getHeight();
         PhysicsWorld.addToPhysicsTick(this);
-
+        platform = new NormalPlatform(new Vector2(0, 5));
         reset();
     }
 
@@ -92,6 +95,8 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         camera.update();
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
+        platform.render(batch);
+        player.render(batch);
 
         batch.flush();
         debugRenderer.render(PhysicsWorld.world, camera.combined); // The debug renderer is used to render all the collision boxes
@@ -106,7 +111,6 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
     @Override
     public void dispose() {
         batch.dispose();
-        img.dispose();
         PhysicsWorld.dispose();
         for (Platform platform : platforms) {
             platform.dispose();

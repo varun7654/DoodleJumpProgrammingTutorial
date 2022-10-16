@@ -10,11 +10,16 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.Disposable;
 import com.dacubeking.doodlejump.Constants;
-import com.dacubeking.doodlejump.DoodleJump;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
 
 public class Player implements PhysicsTickable, Disposable {
+
+    public static final int MOVEMENT_FORCE = 25;
+    public static final int JUMP_VELOCITY = 15;
+
+    private double jumpTime = 0;
+
     public Body getPhysicsBody() {
         return physicsBody;
     }
@@ -75,11 +80,32 @@ public class Player implements PhysicsTickable, Disposable {
 
     @Override
     public void onPhysicsTick() {
-
+        Vector2 position = physicsBody.getPosition();
+        if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
+            physicsBody.applyForceToCenter(MOVEMENT_FORCE, 0, true);
+        }
+        if (Gdx.input.isKeyPressed(Keys.LEFT)) {
+            physicsBody.applyForceToCenter(-MOVEMENT_FORCE, 0, true);
+        }
+        if (position.y < 0) {
+            causeJump(JUMP_VELOCITY);
+        }
+        physicsBody.setLinearVelocity(physicsBody.getLinearVelocity().x * 0.995f,
+                physicsBody.getLinearVelocity().y);
+        jumpTime -= Constants.TIME_STEP;
     }
 
     public void render(Batch batch) {
+        Vector2 position = physicsBody.getPosition();
+        Vector2 velocity = physicsBody.getLinearVelocity();
 
+        if (velocity.x < 0) {
+            batch.draw(playerTextureLeft, position.x, position.y,
+                    (2f / playerTextureLeft.getHeight()) * playerTextureLeft.getWidth(), 2);
+        } else {
+            batch.draw(playerTextureRight, position.x, position.y,
+                    (2f / playerTextureRight.getHeight()) * playerTextureRight.getWidth(), 2);
+        }
     }
 
     @Override
@@ -89,6 +115,7 @@ public class Player implements PhysicsTickable, Disposable {
     }
 
     public void causeJump(float jumpVelocity) {
-
+        physicsBody.setLinearVelocity(physicsBody.getLinearVelocity().x, jumpVelocity);
+        jumpTime = 0.1;
     }
 }

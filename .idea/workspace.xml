@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4163aaa-8362-4ec8-ba02-d72c89f5be2f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/input/InputEventListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/input/InputEventThrower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsTickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsTickable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/physics/PhysicsWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/BreakingPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/BreakingPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/MovingPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/MovingPlatform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +43,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.11.0/ea3e9eccc5c09636f405e345039b62376465a6f4/gdx-1.11.0-sources.jar!/com/badlogic/gdx/ApplicationAdapter.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="x05xz02c" />
   </component>
@@ -67,13 +58,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/varun/Documents/GitHub/AutoBuilder",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dacubeking.doodlejump" />
@@ -90,7 +82,6 @@
   <component name="RunManager">
     <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dacubeking.doodlejump.DesktopLauncher" />
-      <module name="DoodleJump.desktop.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.dacubeking.doodlejump.physics.*" />
@@ -129,6 +120,13 @@
       <workItem from="1657505846166" duration="4171000" />
       <workItem from="1658730995446" duration="1940000" />
       <workItem from="1661827296219" duration="3737000" />
+      <workItem from="1664387449088" duration="3198000" />
+      <workItem from="1664509960267" duration="3000" />
+      <workItem from="1664729543864" duration="1964000" />
+      <workItem from="1664748179637" duration="6538000" />
+      <workItem from="1664916521424" duration="81000" />
+      <workItem from="1665344408700" duration="1742000" />
+      <workItem from="1665352506472" duration="5302000" />
     </task>
     <servers />
   </component>
