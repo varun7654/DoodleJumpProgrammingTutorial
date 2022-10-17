@@ -20,13 +20,14 @@ public class NormalPlatform extends Platform {
             gameTiles,
             0, 0, 120, 35);
 
+    private static final float scalingFactor = 2.0f / platformTexture.getRegionWidth();
+
     @Override
     public void render(Batch batch) {
         Vector2 position = physicsBody.getPosition();
         batch.draw(platformTexture, position.x, position.y,
-                2,
-                (2f / platformTexture.getRegionWidth())
-                        * platformTexture.getRegionHeight());
+                platformTexture.getRegionWidth() * scalingFactor,
+                platformTexture.getRegionHeight() * scalingFactor);
     }
 
     @Override

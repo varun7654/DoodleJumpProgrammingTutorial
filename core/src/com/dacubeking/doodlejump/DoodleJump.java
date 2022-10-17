@@ -3,6 +3,7 @@ package com.dacubeking.doodlejump;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,8 +20,11 @@ import com.dacubeking.doodlejump.platforms.Platform;
 import com.dacubeking.doodlejump.player.Player;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 import static com.badlogic.gdx.math.MathUtils.random;
+import static com.dacubeking.doodlejump.util.MathUtil.mod;
 
 public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
     SpriteBatch batch;
@@ -35,7 +39,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
     }
 
     private Player player;
-    private Platform platform;
+    private final ArrayList<Platform> platforms = new ArrayList<>();
 
     Texture background;
     public float backgroundHeight;
@@ -79,12 +83,10 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         backgroundWidth = camera.viewportWidth;
         backgroundHeight = (camera.viewportWidth / background.getWidth()) * background.getHeight();
         PhysicsWorld.addToPhysicsTick(this);
-        platform = new NormalPlatform(new Vector2(0, 5));
+
         reset();
     }
 
-
-    ArrayList<Platform> platforms = new ArrayList<>();
     float cameraY = 0;
 
     @Override
@@ -95,7 +97,20 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         camera.update();
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        platform.render(batch);
+        batch.draw(background,
+                -backgroundWidth / 2, camera.position.y
+                        - mod(camera.position.y, backgroundHeight)
+                        - backgroundHeight / 2, backgroundWidth,
+                backgroundHeight);
+        batch.draw(background,
+                -backgroundWidth / 2, camera.position.y
+                        - mod(camera.position.y, backgroundHeight)
+                        + backgroundHeight / 2, backgroundWidth,
+                backgroundHeight);
+        //batch.draw(background, -backgroundWidth / 2, backgroundHeight, backgroundWidth, backgroundHeight);
+        for (Platform platform : platforms) {
+            platform.render(batch);
+        }
         player.render(batch);
 
         batch.flush();
@@ -117,10 +132,43 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         }
     }
 
+    float wantedCameraY = 0;
+    float nextPlatformGenerationY = 1;
+
+    private final Random random = new Random();
+
     @Override
     public void onPhysicsTick() {
         Vector3 cameraOffset = new Vector3(0, Gdx.graphics.getHeight() / 2f, 0);
         camera.unproject(cameraOffset).sub(camera.position); // Camera offset is not the world position of the center of the screen
+
+        wantedCameraY = Math.max(
+                player.getPhysicsBody().getPosition().y + cameraOffset.y,
+                wantedCameraY
+        );
+
+        camera.position.y = (wantedCameraY - camera.position.y) * 0.03f
+                + camera.position.y;
+
+        // Is the nextPlatformGenerationY inside the screen?
+        if (nextPlatformGenerationY < wantedCameraY + backgroundHeight) {
+            // Creates a platform at nextPlatformGenerationY
+            platforms.add(new NormalPlatform(new Vector2(
+                    random.nextFloat() * screenWidth - (screenWidth / 2),
+                    nextPlatformGenerationY
+            )));
+
+            nextPlatformGenerationY += random.nextFloat() * 3 + 0.5;
+        }
+
+        Iterator<Platform> platformIterator = platforms.iterator();
+        while (platformIterator.hasNext()) {
+            Platform platform = platformIterator.next();
+            if (platform.getPosition().y < camera.position.y - backgroundHeight * 1) {
+                platform.dispose();
+                platformIterator.remove();
+            }
+        }
     }
 
     public void reset() {
