@@ -8,14 +8,14 @@ public final class MathUtil {
     /**
      * Mod method that always returns a positive number.
      *
-     * @param x The number to be modded.
-     * @param y The modulus.
+     * @param a The number to be modded.
+     * @param b The modulus.
      * @return The modulus of x. (positive number)
      */
-    public static float mod(float x, float y) {
-        float result = x % y;
-        if (x < 0) {
-            result += y;
+    public static float mod(float a, float b) {
+        float result = a % b;
+        if (a < 0) {
+            result += b;
         }
         return result;
     }

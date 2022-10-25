@@ -87,8 +87,6 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         reset();
     }
 
-    float cameraY = 0;
-
     @Override
     public void render() {
         ScreenUtils.clear(0, 0, 0, 1); //Clear everything to black
@@ -98,14 +96,16 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         batch.draw(background,
-                -backgroundWidth / 2, camera.position.y
-                        - mod(camera.position.y, backgroundHeight)
-                        - backgroundHeight / 2, backgroundWidth,
+                -backgroundWidth / 2,
+                camera.position.y - mod(camera.position.y, backgroundHeight)
+                        - backgroundHeight / 2,
+                backgroundWidth,
                 backgroundHeight);
         batch.draw(background,
-                -backgroundWidth / 2, camera.position.y
-                        - mod(camera.position.y, backgroundHeight)
-                        + backgroundHeight / 2, backgroundWidth,
+                -backgroundWidth / 2,
+                camera.position.y - mod(camera.position.y, backgroundHeight)
+                        + backgroundHeight / 2,
+                backgroundWidth,
                 backgroundHeight);
         //batch.draw(background, -backgroundWidth / 2, backgroundHeight, backgroundWidth, backgroundHeight);
         for (Platform platform : platforms) {
@@ -164,7 +164,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         Iterator<Platform> platformIterator = platforms.iterator();
         while (platformIterator.hasNext()) {
             Platform platform = platformIterator.next();
-            if (platform.getPosition().y < camera.position.y - backgroundHeight * 1) {
+            if (platform.getPosition().y < wantedCameraY - backgroundHeight * 1) {
                 platform.dispose();
                 platformIterator.remove();
             }
@@ -176,6 +176,11 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         platforms.clear(); // Clear the list of platforms
         player.dispose();
         player = new Player();
-        cameraY = 0;
+        wantedCameraY = 0;
+        nextPlatformGenerationY = 0;
+    }
+
+    public float getWantedCameraY() {
+        return wantedCameraY;
     }
 }

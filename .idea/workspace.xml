@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4163aaa-8362-4ec8-ba02-d72c89f5be2f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/NormalPlatform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../Program Files/Eclipse Adoptium/jdk-17.0.1.12-hotspot/lib/src.zip!/java.base/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.11.0/ea3e9eccc5c09636f405e345039b62376465a6f4/gdx-1.11.0-sources.jar!/com/badlogic/gdx/ApplicationAdapter.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.11.0/ea3e9eccc5c09636f405e345039b62376465a6f4/gdx-1.11.0-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="x05xz02c" />
@@ -63,7 +66,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/varun/Documents/GitHub/AutoBuilder",
-    "settings.editor.selected.configurable": "preferences.editor"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -82,6 +88,7 @@
   <component name="RunManager">
     <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dacubeking.doodlejump.DesktopLauncher" />
+      <module name="DoodleJumpProgrammingTutorial.desktop.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.dacubeking.doodlejump.physics.*" />
@@ -127,6 +134,9 @@
       <workItem from="1664916521424" duration="81000" />
       <workItem from="1665344408700" duration="1742000" />
       <workItem from="1665352506472" duration="5302000" />
+      <workItem from="1665957798541" duration="7489000" />
+      <workItem from="1666550886459" duration="367000" />
+      <workItem from="1666562576798" duration="4813000" />
     </task>
     <servers />
   </component>
@@ -150,6 +160,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

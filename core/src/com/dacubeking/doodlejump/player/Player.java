@@ -10,8 +10,10 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.Disposable;
 import com.dacubeking.doodlejump.Constants;
+import com.dacubeking.doodlejump.DoodleJump;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
+import net.dermetfan.gdx.physics.box2d.PositionController.P;
 
 public class Player implements PhysicsTickable, Disposable {
 
@@ -36,6 +38,8 @@ public class Player implements PhysicsTickable, Disposable {
         playerTextureRightJumping.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
         playerTextureLeftJumping.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
     }
+
+    public static final int PLAYER_DEATH_BUFFER = 1;
 
     public Player() {
         // First we create a body definition
@@ -93,18 +97,45 @@ public class Player implements PhysicsTickable, Disposable {
         physicsBody.setLinearVelocity(physicsBody.getLinearVelocity().x * 0.995f,
                 physicsBody.getLinearVelocity().y);
         jumpTime -= Constants.TIME_STEP;
+
+        DoodleJump dj = DoodleJump.getInstance();
+
+        if (position.y < dj.getWantedCameraY()
+                - dj.screenHeight / 2 - PLAYER_DEATH_BUFFER) {
+            dj.reset();
+        }
+
+        if (position.x < -dj.backgroundWidth / 2 - playerWidth) {
+            physicsBody.setTransform(dj.backgroundWidth / 2, position.y, 0);
+        }
+        if (position.x > dj.backgroundWidth / 2) {
+            physicsBody.setTransform(-dj.backgroundWidth / 2 - playerWidth, position.y, 0);
+        }
     }
+
+    float playerWidth = (2f / playerTextureLeft.getHeight()) * playerTextureLeft.getWidth();
 
     public void render(Batch batch) {
         Vector2 position = physicsBody.getPosition();
         Vector2 velocity = physicsBody.getLinearVelocity();
 
-        if (velocity.x < 0) {
-            batch.draw(playerTextureLeft, position.x, position.y,
-                    (2f / playerTextureLeft.getHeight()) * playerTextureLeft.getWidth(), 2);
+
+        if (jumpTime > 0) {
+            if (velocity.x < 0) {
+                batch.draw(playerTextureLeftJumping, position.x, position.y,
+                        playerWidth, 2);
+            } else {
+                batch.draw(playerTextureRightJumping, position.x, position.y,
+                        playerWidth, 2);
+            }
         } else {
-            batch.draw(playerTextureRight, position.x, position.y,
-                    (2f / playerTextureRight.getHeight()) * playerTextureRight.getWidth(), 2);
+            if (velocity.x < 0) {
+                batch.draw(playerTextureLeft, position.x, position.y,
+                        playerWidth, 2);
+            } else {
+                batch.draw(playerTextureRight, position.x, position.y,
+                        playerWidth, 2);
+            }
         }
     }
 
