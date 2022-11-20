@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
+import com.dacubeking.doodlejump.platforms.MovingPlatform;
 import com.dacubeking.doodlejump.platforms.NormalPlatform;
 import com.dacubeking.doodlejump.platforms.Platform;
 import com.dacubeking.doodlejump.player.Player;
@@ -153,10 +154,16 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         // Is the nextPlatformGenerationY inside the screen?
         if (nextPlatformGenerationY < wantedCameraY + backgroundHeight) {
             // Creates a platform at nextPlatformGenerationY
-            platforms.add(new NormalPlatform(new Vector2(
+            Vector2 randomPosition = new Vector2(
                     random.nextFloat() * screenWidth - (screenWidth / 2),
                     nextPlatformGenerationY
-            )));
+            );
+
+            if (random.nextFloat() < 0.5) {
+                platforms.add(new NormalPlatform(randomPosition));
+            } else {
+                platforms.add(new MovingPlatform(randomPosition));
+            }
 
             nextPlatformGenerationY += random.nextFloat() * 3 + 0.5;
         }

@@ -4,13 +4,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.Disposable;
+import com.dacubeking.doodlejump.DoodleJump;
 import com.dacubeking.doodlejump.physics.PlayerContactable;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
+import com.dacubeking.doodlejump.player.Player;
 
 public abstract class Platform implements Disposable, PhysicsTickable, PlayerContactable {
 
@@ -22,7 +25,14 @@ public abstract class Platform implements Disposable, PhysicsTickable, PlayerCon
         gameTiles.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
     }
 
-    public Platform(Vector2 position) {
+    protected final TextureRegion platformTexture;
+    protected final float scalingFactor;
+
+
+    public Platform(Vector2 position, TextureRegion platformTextureLocal) {
+        this.platformTexture = platformTextureLocal;
+        scalingFactor = 2.0f / platformTexture.getRegionWidth();
+
         position.add(-1, 0); //Add a fixed value to make the position passed represent the center of the platform
         // First we create a body definition
         BodyDef platformBodyDef = new BodyDef();
@@ -64,8 +74,6 @@ public abstract class Platform implements Disposable, PhysicsTickable, PlayerCon
         PhysicsWorld.addToPhysicsTick(this);
     }
 
-    public abstract void render(Batch batch);
-
     public void dispose() {
         PhysicsWorld.removeFromPhysicsTick(this);
         PhysicsWorld.world.destroyBody(physicsBody);
@@ -78,5 +86,19 @@ public abstract class Platform implements Disposable, PhysicsTickable, PlayerCon
      */
     public Vector2 getPosition() {
         return physicsBody.getPosition();
+    }
+
+    @Override
+    public void onPlayerContact(Body playerBody) {
+        if (playerBody.getLinearVelocity().y < 0) {
+            DoodleJump.getPlayer().causeJump(Player.JUMP_VELOCITY);
+        }
+    }
+
+    public void render(Batch batch) {
+        Vector2 position = physicsBody.getPosition();
+        batch.draw(platformTexture, position.x, position.y,
+                platformTexture.getRegionWidth() * scalingFactor,
+                platformTexture.getRegionHeight() * scalingFactor);
     }
 }

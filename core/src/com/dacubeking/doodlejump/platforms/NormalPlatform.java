@@ -12,7 +12,7 @@ import com.dacubeking.doodlejump.player.Player;
 
 public class NormalPlatform extends Platform {
     public NormalPlatform(Vector2 position) {
-        super(position);
+        super(position, platformTexture);
     }
 
 
