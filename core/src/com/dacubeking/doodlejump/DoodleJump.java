@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.dacubeking.doodlejump.physics.PhysicsTickable;
 import com.dacubeking.doodlejump.physics.PhysicsWorld;
+import com.dacubeking.doodlejump.platforms.BreakingPlatform;
 import com.dacubeking.doodlejump.platforms.MovingPlatform;
 import com.dacubeking.doodlejump.platforms.NormalPlatform;
 import com.dacubeking.doodlejump.platforms.Platform;
@@ -115,7 +116,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         player.render(batch);
 
         batch.flush();
-        debugRenderer.render(PhysicsWorld.world, camera.combined); // The debug renderer is used to render all the collision boxes
+        //debugRenderer.render(PhysicsWorld.world, camera.combined); // The debug renderer is used to render all the collision boxes
         batch.end();
     }
 
@@ -152,17 +153,20 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
                 + camera.position.y;
 
         // Is the nextPlatformGenerationY inside the screen?
-        if (nextPlatformGenerationY < wantedCameraY + backgroundHeight) {
+        if (nextPlatformGenerationY < camera.position.y + backgroundHeight) {
             // Creates a platform at nextPlatformGenerationY
             Vector2 randomPosition = new Vector2(
                     random.nextFloat() * screenWidth - (screenWidth / 2),
                     nextPlatformGenerationY
             );
+            float randomFloat = random.nextFloat();
 
-            if (random.nextFloat() < 0.5) {
+            if (randomFloat < 0.5) {
                 platforms.add(new NormalPlatform(randomPosition));
-            } else {
+            } else if (randomFloat < 0.75) {
                 platforms.add(new MovingPlatform(randomPosition));
+            } else {
+                platforms.add(new BreakingPlatform(randomPosition));
             }
 
             nextPlatformGenerationY += random.nextFloat() * 3 + 0.5;
@@ -171,7 +175,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
         Iterator<Platform> platformIterator = platforms.iterator();
         while (platformIterator.hasNext()) {
             Platform platform = platformIterator.next();
-            if (platform.getPosition().y < wantedCameraY - backgroundHeight * 1) {
+            if (platform.getPosition().y < camera.position.y - backgroundHeight * 1) {
                 platform.dispose();
                 platformIterator.remove();
             }
@@ -179,6 +183,7 @@ public class DoodleJump extends ApplicationAdapter implements PhysicsTickable {
     }
 
     public void reset() {
+        System.out.println("score: " + wantedCameraY);
         platforms.forEach(Platform::dispose); // Dispose all the platforms
         platforms.clear(); // Clear the list of platforms
         player.dispose();

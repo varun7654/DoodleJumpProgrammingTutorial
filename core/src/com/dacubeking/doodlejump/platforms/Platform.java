@@ -31,7 +31,11 @@ public abstract class Platform implements Disposable, PhysicsTickable, PlayerCon
 
     public Platform(Vector2 position, TextureRegion platformTextureLocal) {
         this.platformTexture = platformTextureLocal;
-        scalingFactor = 2.0f / platformTexture.getRegionWidth();
+        if (platformTextureLocal != null) {
+            scalingFactor = 2.0f / platformTexture.getRegionWidth();
+        } else {
+            scalingFactor = 0;
+        }
 
         position.add(-1, 0); //Add a fixed value to make the position passed represent the center of the platform
         // First we create a body definition

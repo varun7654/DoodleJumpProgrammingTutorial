@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4163aaa-8362-4ec8-ba02-d72c89f5be2f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="c8e4d97e-4232-45d1-b2d0-fe3423a10990" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/BreakingPlatform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/DoodleJump.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/platforms/Platform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/dacubeking/doodlejump/util/MathUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,17 +61,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/varun/Documents/GitHub/AutoBuilder",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/varun/Documents/GitHub/AutoBuilder&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dacubeking.doodlejump" />
